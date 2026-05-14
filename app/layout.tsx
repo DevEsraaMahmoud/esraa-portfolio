@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Senior Full-Stack Engineer focused on scalable systems, Laravel, Vue.js, APIs, multi-tenancy and modern web engineering.";
+  "Senior Full-Stack Engineer in Cairo. Laravel, PHP, Vue 3, B2B integrations, payments, performance and scalable product engineering.";
 
 export const metadata: Metadata = {
   metadataBase: getSiteUrl(),
@@ -32,8 +32,10 @@ export const metadata: Metadata = {
     "Vue.js",
     "PHP",
     "APIs",
-    "Multi-tenancy",
+    "Redis",
+    "Inertia.js",
     "CI/CD",
+    "Cairo",
     "Esraa Mahmoud",
   ],
   authors: [{ name: siteName }],

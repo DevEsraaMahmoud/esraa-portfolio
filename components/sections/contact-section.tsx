@@ -1,4 +1,4 @@
-import { Download } from "lucide-react";
+import { Download, Phone } from "lucide-react";
 
 import { SectionReveal } from "@/components/motion/section-reveal";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,12 @@ export function ContactSection() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button size="lg" className="rounded-2xl" asChild>
               <a href={social.email}>Contact Me</a>
+            </Button>
+            <Button size="lg" variant="secondary" className="rounded-2xl" asChild>
+              <a href={`tel:${social.phone}`} className="gap-2">
+                <Phone className="size-4" />
+                {social.phone}
+              </a>
             </Button>
             <Button size="lg" variant="secondary" className="rounded-2xl" asChild>
               <a href="/cv.pdf" download className="gap-2">

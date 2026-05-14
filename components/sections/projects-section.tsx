@@ -21,10 +21,10 @@ export function ProjectsSection() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-            Featured Projects
+            Selected projects
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-            Selected work across products and platforms
+            Builds that mirror production work
           </h2>
         </div>
       </div>

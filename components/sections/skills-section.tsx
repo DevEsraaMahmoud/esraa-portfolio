@@ -15,15 +15,15 @@ export function SkillsSection() {
             Skills
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-            Tools and practices I use every day
+            Technical skills
           </h2>
           <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-            Grouped by how I apply them across the stack—from services and data
-            paths to interfaces and delivery.
+            Backend, data and performance, frontend and integrations — aligned
+            with how I ship in production.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((group) => (
             <Card
               key={group.title}

@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { social } from "@/lib/content";
+import { location, social } from "@/lib/content";
 import { siteName } from "@/lib/site";
 
 const container = {
@@ -60,22 +60,29 @@ export function HeroSection() {
             variants={item}
             className="mt-3 text-xl font-medium text-zinc-800 sm:text-2xl dark:text-zinc-200"
           >
-            Senior Full-Stack Engineer
+            Senior Full-Stack Engineer — product engineering and scalable
+            systems
+          </motion.p>
+          <motion.p
+            variants={item}
+            className="mt-2 text-sm font-medium text-zinc-500 dark:text-zinc-400"
+          >
+            {location}
           </motion.p>
           <motion.p
             variants={item}
             className="mt-4 text-lg text-zinc-600 sm:text-xl dark:text-zinc-400"
           >
-            Building scalable products, integrations and high-performance
-            systems.
+            Laravel, PHP, MySQL, Redis, Vue 3 and Inertia.js — from B2B
+            integrations and payments to performance and production reliability.
           </motion.p>
           <motion.p
             variants={item}
             className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400"
           >
-            PHP/Laravel & Vue.js engineer focused on backend architecture,
-            APIs, multi-tenancy systems, CI/CD workflows and scalable product
-            engineering.
+            I focus on backend architecture, secure APIs, queues and caching,
+            end-to-end product delivery and maintainable systems that support
+            real business outcomes.
           </motion.p>
 
           <motion.div

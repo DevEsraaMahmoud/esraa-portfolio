@@ -43,15 +43,26 @@ export function ExperienceSection() {
                       <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                         {job.company}
                       </p>
+                      <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-500">
+                        {job.location}
+                      </p>
                     </div>
                     <p className="text-sm tabular-nums text-zinc-500 dark:text-zinc-500">
                       {job.period}
                     </p>
                   </div>
                   <Separator className="my-4 bg-zinc-200 dark:bg-zinc-800" />
-                  <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                    {job.description}
-                  </p>
+                  <ul className="space-y-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    {job.highlights.map((line, hi) => (
+                      <li key={`${job.company}-${hi}`} className="flex gap-2.5">
+                        <span
+                          className="mt-2 size-1 shrink-0 rounded-full bg-zinc-300 dark:bg-zinc-600"
+                          aria-hidden
+                        />
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

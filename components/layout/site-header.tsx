@@ -16,6 +16,7 @@ const nav = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
   { href: "#notes", label: "Notes" },
   { href: "#contact", label: "Contact" },
 ] as const;
