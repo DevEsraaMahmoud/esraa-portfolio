@@ -8,26 +8,30 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { engineeringNotes } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function NotesSection() {
+type Props = { dict: Dictionary };
+
+export function NotesSection({ dict }: Props) {
   return (
-    <SectionReveal id="notes" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <SectionReveal
+      id="notes"
+      className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
       <div className="max-w-2xl">
         <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-          Engineering Notes
+          {dict.notes.kicker}
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-          Blog preview — writing in progress
+          {dict.notes.heading}
         </h2>
         <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-          Short-form notes on shipping Laravel platforms, search, tenancy and
-          delivery. Full articles will land here soon.
+          {dict.notes.intro}
         </p>
       </div>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
-        {engineeringNotes.map((note) => (
+        {dict.notes.items.map((note) => (
           <Card
             key={note.title}
             className="group border-zinc-200/80 transition-colors hover:border-zinc-300 dark:border-zinc-800/80 dark:hover:border-zinc-700"
@@ -46,7 +50,7 @@ export function NotesSection() {
             </CardHeader>
             <CardContent>
               <span className="text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
-                Coming soon
+                {dict.notes.comingSoon}
               </span>
             </CardContent>
           </Card>

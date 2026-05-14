@@ -1,8 +1,9 @@
 import { ImageResponse } from "next/og";
 
+import { en } from "@/lib/i18n/dictionaries/en";
 import { siteName } from "@/lib/site";
 
-export const alt = `${siteName} — Senior Full-Stack Engineer`;
+export const alt = en.meta.titleDefault;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -35,7 +36,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.05,
           }}
         >
-          Senior Full-Stack Engineer
+          {en.hero.role.split("—")[0]?.trim() ?? "Senior Full-Stack Engineer"}
         </div>
         <div
           style={{
@@ -46,7 +47,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.45,
           }}
         >
-          Building scalable products, integrations and high-performance systems.
+          {en.hero.lead}
         </div>
       </div>
     ),

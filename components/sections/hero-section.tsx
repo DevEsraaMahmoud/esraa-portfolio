@@ -5,7 +5,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { location, social } from "@/lib/content";
+import { social } from "@/lib/content";
+import type { Locale } from "@/lib/i18n/config";
+import type { Dictionary } from "@/lib/i18n/types";
 import { siteName } from "@/lib/site";
 
 const container = {
@@ -25,8 +27,11 @@ const item = {
   },
 };
 
-export function HeroSection() {
+type Props = { dict: Dictionary; locale: Locale };
+
+export function HeroSection({ dict, locale }: Props) {
   const reduceMotion = useReducedMotion();
+  const prefix = `/${locale}`;
 
   return (
     <section
@@ -48,7 +53,7 @@ export function HeroSection() {
             variants={item}
             className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
           >
-            Portfolio
+            {dict.hero.eyebrow}
           </motion.p>
           <motion.h1
             variants={item}
@@ -60,29 +65,25 @@ export function HeroSection() {
             variants={item}
             className="mt-3 text-xl font-medium text-zinc-800 sm:text-2xl dark:text-zinc-200"
           >
-            Senior Full-Stack Engineer — product engineering and scalable
-            systems
+            {dict.hero.role}
           </motion.p>
           <motion.p
             variants={item}
             className="mt-2 text-sm font-medium text-zinc-500 dark:text-zinc-400"
           >
-            {location}
+            {dict.hero.location}
           </motion.p>
           <motion.p
             variants={item}
             className="mt-4 text-lg text-zinc-600 sm:text-xl dark:text-zinc-400"
           >
-            Laravel, PHP, MySQL, Redis, Vue 3 and Inertia.js — from B2B
-            integrations and payments to performance and production reliability.
+            {dict.hero.lead}
           </motion.p>
           <motion.p
             variants={item}
             className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400"
           >
-            I focus on backend architecture, secure APIs, queues and caching,
-            end-to-end product delivery and maintainable systems that support
-            real business outcomes.
+            {dict.hero.body}
           </motion.p>
 
           <motion.div
@@ -90,13 +91,13 @@ export function HeroSection() {
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button size="lg" className="rounded-2xl" asChild>
-              <a href="#projects" className="gap-2">
-                View Projects
-                <ArrowRight className="size-4" />
+              <a href={`${prefix}#projects`} className="gap-2">
+                {dict.hero.viewProjects}
+                <ArrowRight className="size-4 rtl:rotate-180" />
               </a>
             </Button>
             <Button size="lg" variant="secondary" className="rounded-2xl" asChild>
-              <a href="#contact">Contact Me</a>
+              <a href={`${prefix}#contact`}>{dict.hero.contact}</a>
             </Button>
           </motion.div>
 
@@ -105,7 +106,7 @@ export function HeroSection() {
             className="mt-12 flex flex-wrap items-center gap-3"
           >
             <span className="text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
-              Connect
+              {dict.hero.connect}
             </span>
             <div className="flex gap-2">
               <Button variant="outline" size="icon" className="rounded-xl" asChild>
@@ -113,7 +114,7 @@ export function HeroSection() {
                   href={social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GitHub"
+                  aria-label={dict.aria.github}
                 >
                   <GitHubIcon className="size-5" />
                 </a>
@@ -123,13 +124,13 @@ export function HeroSection() {
                   href={social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn"
+                  aria-label={dict.aria.linkedin}
                 >
                   <LinkedInIcon className="size-5" />
                 </a>
               </Button>
               <Button variant="outline" size="icon" className="rounded-xl" asChild>
-                <a href={social.email} aria-label="Email">
+                <a href={social.email} aria-label={dict.aria.email}>
                   <Mail className="size-5" />
                 </a>
               </Button>

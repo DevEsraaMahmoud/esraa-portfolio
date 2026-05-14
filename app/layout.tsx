@@ -1,7 +1,10 @@
+import { Cairo, Geist, Geist_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { en } from "@/lib/i18n/dictionaries/en";
+import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config";
 import { getSiteUrl, siteName } from "@/lib/site";
 
 import "./globals.css";
@@ -16,47 +19,38 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const description =
-  "Senior Full-Stack Engineer in Cairo. Laravel, PHP, Vue 3, B2B integrations, payments, performance and scalable product engineering.";
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
+  display: "swap",
+});
+
+const base = getSiteUrl();
 
 export const metadata: Metadata = {
-  metadataBase: getSiteUrl(),
+  metadataBase: base,
   title: {
-    default: `${siteName} — Senior Full-Stack Engineer`,
+    default: en.meta.titleDefault,
     template: `%s — ${siteName}`,
   },
-  description,
-  keywords: [
-    "Full-Stack Engineer",
-    "Laravel",
-    "Vue.js",
-    "PHP",
-    "APIs",
-    "Redis",
-    "Inertia.js",
-    "CI/CD",
-    "Cairo",
-    "Esraa Mahmoud",
-  ],
+  description: en.meta.description,
+  keywords: [...en.meta.keywords],
   authors: [{ name: siteName }],
   creator: siteName,
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "/",
+    locale: en.meta.ogLocale,
+    url: "/en",
     siteName,
-    title: `${siteName} — Senior Full-Stack Engineer`,
-    description,
+    title: en.meta.titleDefault,
+    description: en.meta.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} — Senior Full-Stack Engineer`,
-    description,
+    title: en.meta.titleDefault,
+    description: en.meta.description,
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -68,15 +62,20 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const h = await headers();
+  const raw = h.get("x-locale");
+  const locale: Locale = raw && isLocale(raw) ? raw : defaultLocale;
+  const dir = locale === "ar" ? "rtl" : "ltr";
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-dvh bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} min-h-dvh bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100`}
       >
         <ThemeProvider
           attribute="class"

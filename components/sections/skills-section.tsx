@@ -1,9 +1,11 @@
 import { SectionReveal } from "@/components/motion/section-reveal";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { skillGroups } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function SkillsSection() {
+type Props = { dict: Dictionary };
+
+export function SkillsSection({ dict }: Props) {
   return (
     <SectionReveal
       id="skills"
@@ -12,19 +14,18 @@ export function SkillsSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-            Skills
+            {dict.skills.kicker}
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-            Technical skills
+            {dict.skills.heading}
           </h2>
           <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-            Backend, data and performance, frontend and integrations — aligned
-            with how I ship in production.
+            {dict.skills.intro}
           </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {skillGroups.map((group) => (
+          {dict.skills.groups.map((group) => (
             <Card
               key={group.title}
               className="border-zinc-200/80 dark:border-zinc-800/80"

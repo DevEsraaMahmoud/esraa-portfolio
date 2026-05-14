@@ -1,8 +1,10 @@
 import { SectionReveal } from "@/components/motion/section-reveal";
 import { Separator } from "@/components/ui/separator";
-import { experience } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function ExperienceSection() {
+type Props = { dict: Dictionary };
+
+export function ExperienceSection({ dict }: Props) {
   return (
     <SectionReveal
       id="experience"
@@ -11,22 +13,22 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-            Experience
+            {dict.experience.kicker}
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-            Where I have shipped and led
+            {dict.experience.heading}
           </h2>
         </div>
 
         <div className="mx-auto mt-14 max-w-3xl space-y-0">
-          {experience.map((job, index) => (
+          {dict.experience.jobs.map((job, index) => (
             <div key={`${job.company}-${job.period}`} className="flex gap-5 sm:gap-6">
               <div className="flex w-8 shrink-0 flex-col items-center sm:w-9">
                 <span
                   className="mt-2 size-2.5 rounded-full border-2 border-zinc-300 bg-zinc-50 ring-4 ring-zinc-100 dark:border-zinc-600 dark:bg-zinc-950 dark:ring-zinc-900"
                   aria-hidden
                 />
-                {index < experience.length - 1 ? (
+                {index < dict.experience.jobs.length - 1 ? (
                   <div
                     className="mt-2 w-px flex-1 min-h-[2rem] bg-zinc-200 dark:bg-zinc-800"
                     aria-hidden

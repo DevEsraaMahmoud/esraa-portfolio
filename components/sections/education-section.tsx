@@ -5,9 +5,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { education } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n/types";
 
-export function EducationSection() {
+type Props = { dict: Dictionary };
+
+export function EducationSection({ dict }: Props) {
   return (
     <SectionReveal
       id="education"
@@ -15,23 +17,23 @@ export function EducationSection() {
     >
       <div className="max-w-2xl">
         <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-          Education
+          {dict.education.kicker}
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-          Academic background
+          {dict.education.heading}
         </h2>
       </div>
 
       <div className="mt-12 max-w-2xl">
-        {education.map((entry) => (
+        {dict.education.entries.map((entry) => (
           <Card
-            key={entry.institution}
+            key={entry.degree}
             className="border-zinc-200/80 dark:border-zinc-800/80"
           >
             <CardHeader>
               <CardTitle className="text-xl">{entry.degree}</CardTitle>
               <CardDescription className="text-base">
-                {entry.institution} · {entry.location}
+                {entry.schoolLine}
               </CardDescription>
             </CardHeader>
           </Card>

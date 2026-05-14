@@ -14,7 +14,26 @@ function useIsClient() {
   );
 }
 
-export function ThemeToggle() {
+type AriaLabels = {
+  toggleTheme: string;
+  toggleThemeLoading: string;
+  switchToLight: string;
+  switchToDark: string;
+};
+
+const defaultAria: AriaLabels = {
+  toggleTheme: "Toggle color theme",
+  toggleThemeLoading: "Toggle color theme",
+  switchToLight: "Switch to light mode",
+  switchToDark: "Switch to dark mode",
+};
+
+export function ThemeToggle({
+  ariaLabels,
+}: {
+  ariaLabels?: Partial<AriaLabels>;
+}) {
+  const a = { ...defaultAria, ...ariaLabels };
   const { resolvedTheme, setTheme } = useTheme();
   const isClient = useIsClient();
 
@@ -25,7 +44,7 @@ export function ThemeToggle() {
         variant="ghost"
         size="icon"
         className="rounded-xl"
-        aria-label="Toggle color theme"
+        aria-label={a.toggleThemeLoading}
         disabled
       >
         <Sun className="size-5 opacity-40" />
@@ -41,7 +60,7 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       className="rounded-xl"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={isDark ? a.switchToLight : a.switchToDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       {isDark ? (
