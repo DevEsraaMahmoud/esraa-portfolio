@@ -60,16 +60,16 @@ export default async function Home({ params }: PageProps) {
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-zinc-900 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white dark:focus:bg-zinc-50 dark:focus:text-zinc-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:start-[max(1rem,env(safe-area-inset-left))] focus:top-[max(1rem,env(safe-area-inset-top))] focus:z-[100] focus:rounded-xl focus:bg-zinc-900 focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-white dark:focus:bg-zinc-50 dark:focus:text-zinc-900"
       >
         {dict.skipMain}
       </a>
       <SiteHeader dict={dict} locale={locale} />
       <main id="main-content" className="flex flex-1 flex-col">
         <HeroSection dict={dict} locale={locale} />
+        <ProjectsSection dict={dict} locale={locale} />
         <AboutSection dict={dict} />
         <SkillsSection dict={dict} />
-        <ProjectsSection dict={dict} locale={locale} />
         <ExperienceSection dict={dict} />
         <EducationSection dict={dict} />
         <NotesSection dict={dict} />

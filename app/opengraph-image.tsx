@@ -36,7 +36,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.05,
           }}
         >
-          {en.hero.role.split("—")[0]?.trim() ?? "Senior Full-Stack Engineer"}
+          {en.hero.titleAccent}
         </div>
         <div
           style={{
@@ -47,7 +47,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.45,
           }}
         >
-          {en.hero.lead}
+          {en.hero.tagline}
         </div>
       </div>
     ),

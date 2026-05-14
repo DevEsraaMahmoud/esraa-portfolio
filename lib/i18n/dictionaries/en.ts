@@ -21,8 +21,9 @@ export const en: Dictionary = {
   },
   skipMain: "Skip to main content",
   nav: {
+    home: "Home",
     about: "About",
-    skills: "Skills",
+    skills: "Services",
     projects: "Projects",
     experience: "Experience",
     education: "Education",
@@ -48,18 +49,20 @@ export const en: Dictionary = {
     currentAria: "Current language",
   },
   hero: {
-    eyebrow: "Portfolio",
-    role: "Senior Full-Stack Engineer — product engineering and scalable systems",
+    hi: "Hi — I'm Esraa Mahmoud",
+    titleAccent: "Senior Full-Stack Engineer",
+    subtitle: "Product engineering & scalable systems",
     location: "Cairo, Egypt",
-    lead: "Laravel, PHP, MySQL, Redis, Vue 3 and Inertia.js — from B2B integrations and payments to performance and production reliability.",
-    body: "I focus on backend architecture, secure APIs, queues and caching, end-to-end product delivery and maintainable systems that support real business outcomes.",
+    tagline:
+      "Focused on scalable Laravel platforms, B2B integrations, payments and performance — shipping maintainable systems with product sense.",
+    viewCv: "View My CV",
+    linkedInCta: "LinkedIn Profile",
     viewProjects: "View Projects",
-    contact: "Contact Me",
-    connect: "Connect",
+    portraitAlt: "Esraa Mahmoud — professional portrait",
   },
   about: {
-    kicker: "Profile",
-    heading: "Product engineering & scalable systems",
+    kicker: "// Profile",
+    heading: "How I work",
     bullets: [
       "Senior Full-Stack Engineer with 5+ years of experience building scalable, production-ready systems using Laravel, PHP, MySQL, Redis, Vue 3 and Inertia.js.",
       "Experienced in backend architecture, B2B integrations, performance optimisation, payment systems and end-to-end product development.",
@@ -68,12 +71,14 @@ export const en: Dictionary = {
     ],
   },
   skills: {
-    kicker: "Skills",
-    heading: "Technical skills",
-    intro: "Backend, data and performance, frontend and integrations — aligned with how I ship in production.",
+    kicker: "// Services / Offers",
+    heading: "What I build best",
+    intro:
+      "Backend-heavy delivery with pragmatic frontend craft — from integrations to search, queues and CI.",
     groups: [
       {
-        title: "Backend",
+        title: "Laravel & PHP platforms",
+        blurb: "Services, repositories, domain events, queues and APIs built for real traffic.",
         items: [
           "Laravel",
           "PHP 8+",
@@ -86,6 +91,7 @@ export const en: Dictionary = {
       },
       {
         title: "Data & performance",
+        blurb: "Indexing, EXPLAIN, Redis, async work and careful schema design.",
         items: [
           "MySQL",
           "Indexing",
@@ -97,11 +103,13 @@ export const en: Dictionary = {
         ],
       },
       {
-        title: "Frontend",
+        title: "Vue 3 & Inertia",
+        blurb: "Product UIs with Tailwind-first systems and predictable client/server boundaries.",
         items: ["Vue 3", "Inertia.js", "Tailwind CSS"],
       },
       {
         title: "Integrations & quality",
+        blurb: "Payments, webhooks, B2B APIs and pipelines that stay green in production.",
         items: [
           "Stripe",
           "PayMob",
@@ -114,39 +122,60 @@ export const en: Dictionary = {
     ],
   },
   projects: {
-    kicker: "Selected projects",
-    heading: "Builds that mirror production work",
+    kicker: "// Selected work",
+    heading: "Projects & platforms",
     github: "GitHub",
     liveDemo: "Live Demo",
     items: [
       {
+        title: "Real Eatste",
+        company: "Real estate · Listings & operations",
+        bullets: [
+          "Property listings, search and lead workflows tailored for real-estate teams.",
+          "Laravel + Vue 3 with role-based access, media handling and scalable catalogues.",
+        ],
+        stack: ["Laravel", "Vue 3", "MySQL", "Redis"],
+      },
+      {
         title: "Bayan POS",
-        description:
-          "Custom POS and operational management system for retail workflows — built for scalability and maintainability with Laravel and Vue 3.",
+        company: "Retail · Operations",
+        bullets: [
+          "Custom POS and operational management for retail workflows.",
+          "Laravel + Vue 3 stack tuned for scalability and maintainability.",
+        ],
         stack: ["Laravel", "Vue 3", "MySQL"],
       },
       {
         title: "Scalable search (1M+ records)",
-        description:
-          "Chunked seeding, FULLTEXT search, Redis caching, queues and EXPLAIN-driven optimisation for large Laravel datasets.",
+        company: "Open source",
+        bullets: [
+          "Chunked seeding and FULLTEXT search with Redis and queues.",
+          "EXPLAIN-driven optimisation for large Laravel datasets.",
+        ],
         stack: ["Laravel", "MySQL", "Redis", "Queues"],
       },
       {
         title: "PingMe — real-time chat",
-        description:
-          "WebSockets, presence channels, typing indicators and an event-driven backend using Laravel Reverb and Vue 3.",
+        company: "Open source",
+        bullets: [
+          "WebSockets, presence and typing indicators with Laravel Reverb.",
+          "Event-driven backend with Vue 3 client.",
+        ],
         stack: ["Laravel Reverb", "Vue 3", "Redis", "WebSockets"],
       },
       {
         title: "Payment integration demo",
-        description:
-          "Secure payment flows with Stripe and PayMob — idempotent webhooks, transaction verification and production-minded error handling.",
+        company: "Engineering demo",
+        bullets: [
+          "Stripe + PayMob flows with idempotent webhooks.",
+          "Transaction verification and production-minded error handling.",
+        ],
         stack: ["Laravel", "Stripe", "PayMob", "Webhooks"],
       },
     ],
   },
   experience: {
-    kicker: "Experience",
+    kicker: "// Experience",
     heading: "Where I have shipped and led",
     jobs: [
       {
@@ -200,7 +229,7 @@ export const en: Dictionary = {
     ],
   },
   education: {
-    kicker: "Education",
+    kicker: "// Education",
     heading: "Academic background",
     entries: [
       {
@@ -210,7 +239,7 @@ export const en: Dictionary = {
     ],
   },
   notes: {
-    kicker: "Engineering Notes",
+    kicker: "// Engineering notes",
     heading: "Blog preview — writing in progress",
     intro: "Short-form notes on shipping Laravel platforms, search, tenancy and delivery. Full articles will land here soon.",
     comingSoon: "Coming soon",
@@ -238,13 +267,13 @@ export const en: Dictionary = {
     ],
   },
   contact: {
-    heading: "Let's Build Something Great",
+    heading: "Let's build something great",
     intro:
       "Open to product engineering opportunities, backend architecture discussions and scalable web platform development.",
     contactMe: "Contact Me",
     downloadCv: "Download CV",
   },
   footer: {
-    builtWith: "Built with Next.js, TypeScript and Tailwind CSS.",
+    builtWith: "Built with Next.js, TypeScript & Tailwind CSS.",
   },
 };

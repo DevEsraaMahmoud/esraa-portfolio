@@ -1,20 +1,66 @@
 @import "tailwindcss";
 
-/* Class-based dark mode for next-themes (default v4 dark: uses prefers-color-scheme only) */
+/* Class-based dark mode for next-themes */
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-jetbrains);
+}
 
 html[lang="ar"] body {
   font-family: var(--font-cairo), var(--font-geist-sans), ui-sans-serif, system-ui,
     sans-serif;
 }
 
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-display,
+.font-mono-tech {
+  font-family: var(--font-jetbrains), var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html[lang="ar"] .font-display,
+html[lang="ar"] .font-mono-tech {
+  font-family: var(--font-jetbrains), var(--font-cairo), ui-monospace, monospace;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-rtl {
+    animation: none;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -24,11 +70,11 @@ html {
 }
 
 ::selection {
-  background-color: rgb(228 228 231 / 0.9);
-  color: rgb(24 24 27);
+  background-color: rgb(34 211 238 / 0.35);
+  color: rgb(15 23 42);
 }
 
 .dark ::selection {
-  background-color: rgb(63 63 70 / 0.9);
-  color: rgb(250 250 250);
+  background-color: rgb(34 211 238 / 0.25);
+  color: rgb(240 253 250);
 }

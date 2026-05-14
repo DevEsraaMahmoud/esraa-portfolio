@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 function useIsClient() {
   return React.useSyncExternalStore(
@@ -30,8 +31,10 @@ const defaultAria: AriaLabels = {
 
 export function ThemeToggle({
   ariaLabels,
+  className,
 }: {
   ariaLabels?: Partial<AriaLabels>;
+  className?: string;
 }) {
   const a = { ...defaultAria, ...ariaLabels };
   const { resolvedTheme, setTheme } = useTheme();
@@ -43,7 +46,7 @@ export function ThemeToggle({
         type="button"
         variant="ghost"
         size="icon"
-        className="rounded-xl"
+        className={cn("size-11 rounded-xl sm:size-10", className)}
         aria-label={a.toggleThemeLoading}
         disabled
       >
@@ -59,7 +62,7 @@ export function ThemeToggle({
       type="button"
       variant="ghost"
       size="icon"
-      className="rounded-xl"
+      className={cn("size-11 rounded-xl sm:size-10", className)}
       aria-label={isDark ? a.switchToLight : a.switchToDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >

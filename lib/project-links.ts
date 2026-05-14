@@ -1,6 +1,10 @@
 /** Non-translatable URLs for project cards (same for every locale). */
 export const projectLinks = [
   {
+    github: "https://github.com/DevEsraaMahmoud/real-estate",
+    demo: "https://real-estate-pi-gules.vercel.app/ar",
+  },
+  {
     github: "https://github.com/DevEsraaMahmoud",
     demo: "#contact",
   },

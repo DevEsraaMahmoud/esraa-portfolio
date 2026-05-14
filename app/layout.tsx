@@ -1,4 +1,4 @@
-import { Cairo, Geist, Geist_Mono } from "next/font/google";
+import { Cairo, Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import { headers } from "next/headers";
 import type { Metadata, Viewport } from "next";
 
@@ -17,6 +17,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const cairo = Cairo({
@@ -56,6 +62,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#fafafa" },
     { media: "(prefers-color-scheme: dark)", color: "#09090b" },
@@ -75,7 +82,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} min-h-dvh bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} ${cairo.variable} min-h-dvh overflow-x-clip bg-slate-50 font-sans text-slate-900 antialiased dark:bg-[#050a14] dark:text-slate-100`}
       >
         <ThemeProvider
           attribute="class"

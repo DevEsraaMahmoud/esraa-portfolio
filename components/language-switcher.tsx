@@ -26,7 +26,12 @@ export function LanguageSwitcher({ locale, dict }: Props) {
   const label = next === "ar" ? dict.switchToArabic : dict.switchToEnglish;
 
   return (
-    <Button variant="outline" size="sm" className="rounded-xl px-3 font-medium" asChild>
+    <Button
+      variant="outline"
+      size="sm"
+      className="min-h-10 shrink-0 rounded-xl border-slate-300 px-2.5 text-xs font-medium text-slate-700 hover:bg-cyan-500/10 hover:text-cyan-800 sm:min-h-9 sm:px-3 sm:text-sm dark:border-cyan-900/50 dark:text-cyan-100/90 dark:hover:text-cyan-50"
+      asChild
+    >
       <Link href={href} hrefLang={next} lang={next} prefetch={false}>
         {label}
       </Link>

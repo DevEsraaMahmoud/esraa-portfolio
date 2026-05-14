@@ -1,4 +1,5 @@
 export type NavLabels = {
+  home: string;
   about: string;
   skills: string;
   projects: string;
@@ -36,14 +37,15 @@ export type Dictionary = {
     currentAria: string;
   };
   hero: {
-    eyebrow: string;
-    role: string;
+    hi: string;
+    titleAccent: string;
+    subtitle: string;
     location: string;
-    lead: string;
-    body: string;
+    tagline: string;
+    viewCv: string;
+    linkedInCta: string;
     viewProjects: string;
-    contact: string;
-    connect: string;
+    portraitAlt: string;
   };
   about: {
     kicker: string;
@@ -54,14 +56,19 @@ export type Dictionary = {
     kicker: string;
     heading: string;
     intro: string;
-    groups: { title: string; items: string[] }[];
+    groups: { title: string; blurb: string; items: string[] }[];
   };
   projects: {
     kicker: string;
     heading: string;
     github: string;
     liveDemo: string;
-    items: { title: string; description: string; stack: string[] }[];
+    items: {
+      title: string;
+      company: string;
+      bullets: string[];
+      stack: string[];
+    }[];
   };
   experience: {
     kicker: string;

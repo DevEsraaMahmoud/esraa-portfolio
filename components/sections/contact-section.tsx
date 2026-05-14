@@ -2,7 +2,7 @@ import { Download, Phone } from "lucide-react";
 
 import { SectionReveal } from "@/components/motion/section-reveal";
 import { Button } from "@/components/ui/button";
-import { social } from "@/lib/content";
+import { cvDownloadFilename, cvHref, social } from "@/lib/content";
 import type { Dictionary } from "@/lib/i18n/types";
 
 type Props = { dict: Dictionary };
@@ -11,29 +11,39 @@ export function ContactSection({ dict }: Props) {
   return (
     <SectionReveal
       id="contact"
-      className="border-t border-zinc-200/60 bg-zinc-100/40 py-20 dark:border-zinc-800/60 dark:bg-zinc-900/25 lg:py-28"
+      className="border-t border-slate-200 bg-white py-14 dark:border-cyan-950/30 dark:bg-[#050a14] sm:py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-zinc-200/80 bg-white/90 p-8 dark:border-zinc-800/80 dark:bg-zinc-950/70 sm:p-12 lg:p-14">
-          <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
+      <div className="mx-auto max-w-6xl px-[max(1rem,env(safe-area-inset-left))] pe-[max(1rem,env(safe-area-inset-right))] sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-cyan-950/40 dark:bg-[#0a1220] sm:p-10 lg:p-14">
+          <h2 className="text-balance font-display text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl dark:text-white">
             {dict.contact.heading}
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:mt-4 sm:text-base dark:text-slate-400">
             {dict.contact.intro}
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Button size="lg" className="rounded-2xl" asChild>
-              <a href={social.email}>{dict.contact.contactMe}</a>
+          <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap">
+            <Button
+              size="lg"
+              className="h-12 min-h-12 w-full rounded-xl bg-cyan-600 text-white hover:bg-cyan-500 sm:h-11 sm:min-h-0 sm:w-auto dark:bg-cyan-500 dark:text-slate-950 dark:hover:bg-cyan-400"
+              asChild
+            >
+              <a href={social.email} className="inline-flex w-full justify-center sm:w-auto">
+                {dict.contact.contactMe}
+              </a>
             </Button>
-            <Button size="lg" variant="secondary" className="rounded-2xl" asChild>
-              <a href={`tel:${social.phone}`} className="gap-2">
-                <Phone className="size-4" />
+            <Button size="lg" variant="outline" className="h-12 min-h-12 w-full rounded-xl border-cyan-700/40 sm:h-11 sm:min-h-0 sm:w-auto dark:border-cyan-500/40" asChild>
+              <a href={`tel:${social.phone}`} className="inline-flex w-full justify-center gap-2 sm:w-auto">
+                <Phone className="size-4 shrink-0" />
                 {social.phone}
               </a>
             </Button>
-            <Button size="lg" variant="secondary" className="rounded-2xl" asChild>
-              <a href="/cv.pdf" download className="gap-2">
-                <Download className="size-4" />
+            <Button size="lg" variant="outline" className="h-12 min-h-12 w-full rounded-xl border-cyan-700/40 sm:h-11 sm:min-h-0 sm:w-auto dark:border-cyan-500/40" asChild>
+              <a
+                href={cvHref}
+                download={cvDownloadFilename}
+                className="inline-flex w-full justify-center gap-2 sm:w-auto"
+              >
+                <Download className="size-4 shrink-0" />
                 {dict.contact.downloadCv}
               </a>
             </Button>

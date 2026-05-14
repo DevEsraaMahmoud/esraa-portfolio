@@ -21,8 +21,9 @@ export const ar: Dictionary = {
   },
   skipMain: "تخطي إلى المحتوى الرئيسي",
   nav: {
+    home: "الرئيسية",
     about: "نبذة",
-    skills: "المهارات",
+    skills: "خدمات",
     projects: "المشاريع",
     experience: "الخبرة",
     education: "التعليم",
@@ -48,18 +49,20 @@ export const ar: Dictionary = {
     currentAria: "اللغة الحالية",
   },
   hero: {
-    eyebrow: "ملف أعمال",
-    role: "مهندسة Full-Stack — هندسة المنتجات والأنظمة القابلة للتوسع",
+    hi: "مرحباً — أنا إسراء محمود",
+    titleAccent: "مهندسة Full-Stack",
+    subtitle: "هندسة المنتجات والأنظمة القابلة للتوسع",
     location: "القاهرة، مصر",
-    lead: "Laravel وPHP وMySQL وRedis وVue 3 وInertia.js — من تكاملات B2B والمدفوعات إلى الأداء وموثوقية الإنتاج.",
-    body: "أركز على بنية الخلفية، وواجهات REST الآمنة، والطوابير والتخزين المؤقت، وتسليم المنتج من الطرف إلى الطرف، وأنظمة قابلة للصيانة تدعم نتائج الأعمال.",
+    tagline:
+      "أركز على منصات Laravel القابلة للتوسع، وتكاملات B2B، والمدفوعات والأداء — أنظمة قابلة للصيانة بحس منتجي.",
+    viewCv: "عرض السيرة الذاتية",
+    linkedInCta: "ملف LinkedIn",
     viewProjects: "عرض المشاريع",
-    contact: "تواصل معي",
-    connect: "تواصل",
+    portraitAlt: "إسراء محمود — صورة شخصية احترافية",
   },
   about: {
-    kicker: "نبذة",
-    heading: "هندسة المنتجات وأنظمة قابلة للتوسع",
+    kicker: "// نبذة",
+    heading: "أسلوب عملي",
     bullets: [
       "مهندسة Full-Stack بأكثر من 5 أعوام في بناء أنظمة جاهزة للإنتاج وقابلة للتوسع باستخدام Laravel وPHP وMySQL وRedis وVue 3 وInertia.js.",
       "خبرة في بنية الخلفية، وتكاملات B2B، وتحسين الأداء، وأنظمة المدفوعات، وتطوير المنتج من البداية للنهاية.",
@@ -68,12 +71,14 @@ export const ar: Dictionary = {
     ],
   },
   skills: {
-    kicker: "المهارات",
-    heading: "المهارات التقنية",
-    intro: "الخلفية، والبيانات والأداء، والواجهة، والتكاملات — بما يتماشى مع طريقة تسليمي في الإنتاج.",
+    kicker: "// الخدمات / العروض",
+    heading: "ما أتقنه في التنفيذ",
+    intro:
+      "تسليم يركز على الخلفية مع واجهة عملية — من التكاملات إلى البحث والطوابير وCI.",
     groups: [
       {
-        title: "الخلفية",
+        title: "منصات Laravel وPHP",
+        blurb: "خدمات ومستودعات وأحداث نطاق وواجهات برمجة مبنية لحركة مرور حقيقية.",
         items: [
           "Laravel",
           "PHP 8+",
@@ -86,6 +91,7 @@ export const ar: Dictionary = {
       },
       {
         title: "البيانات والأداء",
+        blurb: "فهرسة وEXPLAIN وRedis وعمل غير متزامن وتصميم مخططات بعناية.",
         items: [
           "MySQL",
           "فهرسة",
@@ -97,11 +103,13 @@ export const ar: Dictionary = {
         ],
       },
       {
-        title: "الواجهة",
+        title: "Vue 3 وInertia",
+        blurb: "واجهات منتج مع Tailwind وحدود واضحة بين العميل والخادم.",
         items: ["Vue 3", "Inertia.js", "Tailwind CSS"],
       },
       {
         title: "التكاملات والجودة",
+        blurb: "مدفوعات وWebhooks وواجهات B2B وخطوط أنابيب تبقى مستقرة في الإنتاج.",
         items: [
           "Stripe",
           "PayMob",
@@ -114,39 +122,60 @@ export const ar: Dictionary = {
     ],
   },
   projects: {
-    kicker: "مشاريع مختارة",
-    heading: "أعمال تعكس تجربة الإنتاج",
+    kicker: "// أعمال مختارة",
+    heading: "مشاريع ومنصات",
     github: "GitHub",
     liveDemo: "عرض مباشر",
     items: [
       {
+        title: "Real Eatste",
+        company: "عقارات · قوائم وتشغيل",
+        bullets: [
+          "قوائم عقارات وبحث وتتبع عملاء بما يناسب فرق العقارات.",
+          "Laravel وVue 3 مع صلاحيات، وسائط، وكتالوجات قابلة للتوسع.",
+        ],
+        stack: ["Laravel", "Vue 3", "MySQL", "Redis"],
+      },
+      {
         title: "Bayan POS",
-        description:
-          "نقطة بيع وإدارة تشغيلية مخصصة لتجارة التجزئة — مبنية للتوسع وقابلية الصيانة باستخدام Laravel وVue 3.",
+        company: "تجارة · تشغيل",
+        bullets: [
+          "نقطة بيع وإدارة تشغيلية لتجارة التجزئة.",
+          "Laravel وVue 3 مع تصميم للتوسع وقابلية الصيانة.",
+        ],
         stack: ["Laravel", "Vue 3", "MySQL"],
       },
       {
         title: "بحث قابل للتوسع (+1 مليون سجل)",
-        description:
-          "توليد بيانات على دفعات، وبحث FULLTEXT، وتخزين مؤقت Redis، وطوابير، وتحسين باستخدام EXPLAIN لمجموعات Laravel الكبيرة.",
+        company: "مشروع مفتوح المصدر",
+        bullets: [
+          "توليد بيانات على دفعات وبحث FULLTEXT مع Redis وطوابير.",
+          "تحسين باستخدام EXPLAIN لمجموعات Laravel الكبيرة.",
+        ],
         stack: ["Laravel", "MySQL", "Redis", "Queues"],
       },
       {
         title: "PingMe — دردشة فورية",
-        description:
-          "WebSockets وقنوات الحضور ومؤشرات الكتابة وخلفية قائمة على الأحداث باستخدام Laravel Reverb وVue 3.",
+        company: "مشروع مفتوح المصدر",
+        bullets: [
+          "WebSockets والحضور ومؤشرات الكتابة مع Laravel Reverb.",
+          "خلفية قائمة على الأحداث مع عميل Vue 3.",
+        ],
         stack: ["Laravel Reverb", "Vue 3", "Redis", "WebSockets"],
       },
       {
         title: "تجربة تكامل المدفوعات",
-        description:
-          "تدفقات دفع آمنة عبر Stripe وPayMob — Webhooks آمنة من التكرار، والتحقق من المعاملات، ومعالجة أخطاء بعقلية الإنتاج.",
+        company: "عرض هندسي",
+        bullets: [
+          "تدفقات Stripe وPayMob مع Webhooks آمنة من التكرار.",
+          "التحقق من المعاملات ومعالجة أخطاء بعقلية الإنتاج.",
+        ],
         stack: ["Laravel", "Stripe", "PayMob", "Webhooks"],
       },
     ],
   },
   experience: {
-    kicker: "الخبرة",
+    kicker: "// الخبرة",
     heading: "أين بنيت وأدرت التسليم",
     jobs: [
       {
@@ -171,7 +200,7 @@ export const ar: Dictionary = {
           "قيادة تطوير الخلفية وتخطيط السبرنت لمنصة تجارة إلكترونية متعددة البائعين.",
           "بناء أنظمة عروض متقدمة، وتكاملات دفع، وسير عمل شحن.",
           "دمج Typesense وMeilisearch وAlgolia عبر Laravel Scout.",
-          "حل مشكلات إنتاج حرجة في المدفوعات ومزامنة المخزون وتدفقات المصادقة.",
+          "حل مشكلات إنتاج حرجة في المدفوعات ومزامنة المخزون والمصادقة.",
           "تحسين التخزين المؤقت والاستعلامات وسير العمل — بما ساهم في تقريباً 60٪ أسرع على المنصة.",
         ],
       },
@@ -200,7 +229,7 @@ export const ar: Dictionary = {
     ],
   },
   education: {
-    kicker: "التعليم",
+    kicker: "// التعليم",
     heading: "المسار الأكاديمي",
     entries: [
       {
@@ -210,7 +239,7 @@ export const ar: Dictionary = {
     ],
   },
   notes: {
-    kicker: "ملاحظات هندسية",
+    kicker: "// ملاحظات هندسية",
     heading: "معاينة مدونة — قيد الإعداد",
     intro: "ملاحظات قصيرة حول Laravel والبحث والـ tenancy والتسليم. ستُنشر مقالات كاملة هنا قريباً.",
     comingSoon: "قريباً",
